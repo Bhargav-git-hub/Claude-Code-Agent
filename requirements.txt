@@ -4,5 +4,5 @@
 anthropic>=2.8.0
 python-dotenv>=1.2.4
 
-# Only needed for new_dir/snake.py (the pygame Snake game).
+# Only needed for game/snake.py (the pygame Snake game).
 pygame>=2.5
