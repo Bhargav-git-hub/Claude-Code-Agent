@@ -1,0 +1,2 @@
+# Claude-Code-Agent
+Python examples of the Claude API: a one-shot request, a chat that remembers prior turns, a tool that reads local files, and a terminal coding agent that lists, reads, and writes files and runs shell commands you approve.
