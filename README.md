@@ -11,7 +11,7 @@ A small collection of Python examples that show how to use the Anthropic (Claude
 | [`tools.py`](tools.py) | Tool-use demo. Claude is given a `read_file` tool and asked to summarize `notes.txt`, `notes1.txt`, and `notes2.txt`. | `read_file` |
 | [`src/claude_agents/agent.py`](src/claude_agents/agent.py) | Full terminal coding agent. Claude can list, read, and write files and run shell commands in an interactive chat. Also available as the `claude-agents` command. | `list_files`, `read_file`, `write_file`, `run_command` |
 | [`agent.py`](agent.py) | Thin wrapper that runs the agent from the repo root. | N/A |
-| [`new_dir/snake.py`](new_dir/snake.py) | Standalone classic Snake game built with pygame. Not related to the Claude API. | N/A |
+| [`game/snake.py`](game/snake.py) | Standalone classic Snake game built with pygame. Not related to the Claude API. | N/A |
 
 Supporting files:
 
@@ -59,7 +59,7 @@ Errors from tools are returned to Claude as text so it can recover. Run the agen
 
 Type `exit` or `quit` to leave the chat.
 
-### `new_dir/snake.py`: Snake game
+### `game/snake.py`: Snake game
 A pygame window with a 30x20 grid.
 - Move with the arrow keys or `WASD`.
 - Eat the red food to grow and score points.
@@ -129,7 +129,7 @@ uv run python api_call.py       # one-shot question
 uv run python llm_memory.py     # chat with memory
 uv run python tools.py          # read notes files via a tool
 uv run python agent.py          # coding agent (asks before running commands)
-uv run python new_dir/snake.py  # Snake game (needs pygame)
+uv run python game/snake.py  # Snake game (needs pygame)
 ```
 
 With pip (after activating `.venv`):
@@ -140,7 +140,7 @@ python agent.py                 # coding agent (asks before running commands)
 python api_call.py              # one-shot question
 python llm_memory.py            # chat with memory
 python tools.py                 # read notes files via a tool
-python new_dir/snake.py         # Snake game
+python game/snake.py         # Snake game
 ```
 
 With pip, `claude-agents` is not on your path because the package is not installed. Run `python agent.py` instead, or install the project with `pip install -e .` to get the command.
