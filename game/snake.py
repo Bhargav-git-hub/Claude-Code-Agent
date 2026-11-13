@@ -1,7 +1,8 @@
 """Classic Snake game built with pygame.
 
-Move with the arrow keys or WASD, eat the red food to grow, and avoid walls and
-your own tail. Press R to restart after a game over, or ESC to quit.
+Move with the arrow keys or WASD, eat the red food to grow, and avoid your own
+tail. The walls wrap around: leaving one edge brings you back on the opposite
+side. Press R to restart after a game over, or ESC to quit.
 """
 
 import random
@@ -108,13 +109,13 @@ def main():
             game["direction"] = game["next_direction"]
             head_x, head_y = game["snake"][0]
             dx, dy = game["direction"]
-            new_head = (head_x + dx, head_y + dy)
+            # Walls wrap around: moving off one edge re-enters from the opposite edge.
+            new_head = ((head_x + dx) % COLS, (head_y + dy) % ROWS)
 
-            # The game ends if the head leaves the grid or runs into the body.
+            # The game ends only if the head runs into the body.
             # The tail is excluded from the check because it moves away this step.
-            hit_wall = not (0 <= new_head[0] < COLS and 0 <= new_head[1] < ROWS)
             hit_self = new_head in game["snake"][:-1]
-            if hit_wall or hit_self:
+            if hit_self:
                 game["game_over"] = True
             else:
                 # Add the new head. If it landed on food, keep the tail (the snake grows).
